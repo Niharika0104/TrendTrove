@@ -6,7 +6,7 @@ function SearchBar() {
     <div class="inline dark:bg-gray-800  relative">
 
       
-            <input type="text" name="q" class="border h-12 shadow p-4 rounded-full dark:text-gray-800 dark:border-gray-700 dark:bg-gray-200" placeholder="search"/>
+            <input type="text" name="q" class="border h-9 shadow px-4 py-2 rounded-full dark:text-gray-800 dark:border-gray-700 dark:bg-gray-200" placeholder="search"/>
             <button type="submit">
                 <svg class="text-teal-400 h-5 w-5 absolute top-1 right-3 fill-current dark:text-teal-300"
                     xmlns="http://www.w3.org/2000/svg" version="1.1"

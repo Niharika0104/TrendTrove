@@ -11,18 +11,6 @@
 
 <br>
 
-## :movie_camera: Demo
-- After a brief introduction, let's dive a little more inside the project.
-- Here is the walk-through of the project.
-
-                 
-
-<p align="center">Video Demonstration</p>
-
-[<img src="https://img.youtube.com/vi/ORyr4u6lpaM/hqdefault.jpg" width="600" height="300" align="center"
-/>](https://www.youtube.com/embed/ORyr4u6lpaM)
-
-<br>
 
 # Dependencies
 

@@ -7,11 +7,11 @@ function Products() {
   const [data,setdata]=useState([]);
   const [loading,setloading]=useState(true);
   const {product}= useParams();
-  console.log(product+"front")
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.post("http://localhost:5000/getproducts", { query: product });
+        console.log(process.env.REACT_APP_API_URL,"url");
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/getproducts`, { query: product });
    console.log(res.data)
    if(data){
         setdata(res.data);

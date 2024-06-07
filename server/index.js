@@ -11,10 +11,10 @@ app.use(express.json());
 
 db();
 const productsrouter= require("./routes/products.js");
-(async () => {
-    const data = await scrape();
-   // console.log(data); // Do something with the scraped data
-})()
+// (async () => {
+//     const data = await scrape();
+//    // console.log(data); // Do something with the scraped data
+// })()
 app.use(express.urlencoded({ extended: true }));
 //for json stringify
 app.use(express.json());

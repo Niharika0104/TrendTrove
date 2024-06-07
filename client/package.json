@@ -12,6 +12,8 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
+    "simplebar": "^6.2.6",
+    "simplebar-react": "^3.2.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

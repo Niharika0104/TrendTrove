@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './output.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <div ></div>
+     <SimpleBar style={{ maxHeight: '100vh' }} autoHide={false}>
     <App />
+    </SimpleBar>
   </React.StrictMode>
 );
 

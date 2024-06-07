@@ -1,0 +1,19 @@
+/* KidsProduct.css */
+.kids-bg {
+    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+}
+
+.kids-title {
+    color: #FF69B4;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+.kids-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.kids-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

@@ -39,21 +39,28 @@ $~$
     cd client
     ```
 4. Add this .env file in client's root folder
-   REACT_APP_API_URL=<your_backend_url>
-5. Install frontend dependencies:
+   
+   ```bash
+      REACT_APP_API_URL=<your_backend_url>
+   ```
+ 
+6. Install frontend dependencies:
 
     ```bash
     npm install
     ```
 
-6. Start the frontend server:
+7. Start the frontend server:
 
     ```bash
     npm start
     ```
-7.Add this .env file in server's root folder
-   DB="mongodb+srv://Admin_364:admin@courseapp.yyiqalo.mongodb.net/?retryWrites=true&w=majority&appName=CourseApp"
-   PORT=5000
+8. Add this .env file in server's root folder
+
+   ```bash
+       DB="mongodb+srv://Admin_364:admin@courseapp.yyiqalo.mongodb.net/?retryWrites=true&w=majority&appName=CourseApp"
+       PORT=5000
+   ```
 7. Open another terminal and navigate to the server folder:
 
     ```bash

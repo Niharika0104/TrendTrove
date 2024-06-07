@@ -73,6 +73,56 @@ Here you add your name (it can be a nickname if you want to!).
                     <br />
                 </a> 
             </td>
-	      </tr>
+	</tr>
+	<tr>
+           <td align="center">
+                <a href="github_Id here"">
+                    <sub><b>name here</b></sub>
+                    <br />
+                </a>  
+            </td>
+            <td align="center">
+                <a href="github_Id here"">
+                    <sub><b>name here</b></sub>
+                    <br />
+                </a> 
+            </td>
+            <td align="center">
+                <a href="github_Id here">
+                    <sub><b>name here</b></sub>
+                    <br />
+                </a> 
+            </td>
+          <td align="center">
+                <a href="github_Id here">
+                    <sub><b>name here</b></sub>
+                    <br />
+                </a> 
+            </td>
+          <td align="center">
+                <a href="github_Id here">
+                    <sub><b>name here</b></sub>
+                    <br />
+                </a> 
+            </td>
+          <td align="center">
+                <a href="github_Id here">
+                    <sub><b>name here</b></sub>
+                    <br />
+                </a> 
+            </td>
+          <td align="center">
+                <a href="github_Id here">
+                    <sub><b>name here</b></sub>
+                    <br />
+                </a> 
+            </td>
+          <td align="center">
+                <a href="github_Id here">
+                    <sub><b>name here</b></sub>
+                    <br />
+                </a> 
+            </td>
+	</tr>
     </tbody>
 </table>

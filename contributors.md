@@ -18,7 +18,7 @@ Here you add your name (it can be a nickname if you want to!).
 
 3️⃣ When done, save the file! And raise a PR!!!! 🎉
 
-<br/><br/><br/>
+
 
 # TrendTrove Contributors 🛍️
 

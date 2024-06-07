@@ -5,37 +5,14 @@
 <p>E-commerce websites require a tremendous amount of data. I searched for APIs online, but they were all priced services. Instead, I used browserless.io to fetch data from the e-commerce sites. Utilizing Puppeteer, I scraped data from different sites .</p>
 <hr>
 
-
-
-
-
-<br>
-
-## :movie_camera: Demo
-- After a brief introduction, let's dive a little more inside the project.
-- Here is the walk-through of the project.
-
-                 
-
-<p align="center">Video Demonstration</p>
-
-[<img src="https://img.youtube.com/vi/ORyr4u6lpaM/hqdefault.jpg" width="600" height="300" align="center"
-/>](https://www.youtube.com/embed/ORyr4u6lpaM)
-
-<br>
-
-# Dependencies
-
-<h2>1. <a href="https://www.browserless.io/">Browserless.io</a></h2>
-I used puppetter to scrape the data
-x
-
 ## Tech Stack
 
 - **Frontend:** React, Tailwind CSS
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 - **Architecture:** MVC (Model-View-Controller)
+
+
 
 ## Setup and Contributions Guidelines
 
@@ -61,20 +38,30 @@ $~$
     ```bash
     cd client
     ```
-
-4. Install frontend dependencies:
+4. Add this .env file in client's root folder
+   
+   ```bash
+      REACT_APP_API_URL=<your_backend_url>
+   ```
+ 
+6. Install frontend dependencies:
 
     ```bash
     npm install
     ```
 
-5. Start the frontend server:
+7. Start the frontend server:
 
     ```bash
     npm start
     ```
+8. Add this .env file in server's root folder
 
-6. Open another terminal and navigate to the server folder:
+   ```bash
+       DB="mongodb+srv://Admin_364:admin@courseapp.yyiqalo.mongodb.net/?retryWrites=true&w=majority&appName=CourseApp"
+       PORT=5000
+   ```
+7. Open another terminal and navigate to the server folder:
 
     ```bash
     cd server
@@ -85,7 +72,7 @@ $~$
     ```bash
     npm install
     ```
-8. Create a database in MongoDB Atlas and add the connection string to the `.env` file:
+8. Create a database in MongoDB Atlas and add the connection string to the `.env` file(I have already include mongo db connection string you can skip this step):
 
     - Create an account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
     - Create a new cluster and database.

@@ -12,6 +12,8 @@
 - **Database:** MongoDB
 - **Architecture:** MVC (Model-View-Controller)
 
+
+
 ## Setup and Contributions Guidelines
 
 $~$
@@ -36,20 +38,23 @@ $~$
     ```bash
     cd client
     ```
-
-4. Install frontend dependencies:
+4. Add this .env file in client's root folder
+   REACT_APP_API_URL=<your_backend_url>
+5. Install frontend dependencies:
 
     ```bash
     npm install
     ```
 
-5. Start the frontend server:
+6. Start the frontend server:
 
     ```bash
     npm start
     ```
-
-6. Open another terminal and navigate to the server folder:
+7.Add this .env file in server's root folder
+   DB="mongodb+srv://Admin_364:admin@courseapp.yyiqalo.mongodb.net/?retryWrites=true&w=majority&appName=CourseApp"
+   PORT=5000
+7. Open another terminal and navigate to the server folder:
 
     ```bash
     cd server
@@ -60,7 +65,7 @@ $~$
     ```bash
     npm install
     ```
-8. Create a database in MongoDB Atlas and add the connection string to the `.env` file:
+8. Create a database in MongoDB Atlas and add the connection string to the `.env` file(I have already include mongo db connection string you can skip this step):
 
     - Create an account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
     - Create a new cluster and database.

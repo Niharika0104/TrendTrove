@@ -5,19 +5,6 @@
 <p>E-commerce websites require a tremendous amount of data. I searched for APIs online, but they were all priced services. Instead, I used browserless.io to fetch data from the e-commerce sites. Utilizing Puppeteer, I scraped data from different sites .</p>
 <hr>
 
-
-
-
-
-<br>
-
-
-# Dependencies
-
-<h2>1. <a href="https://www.browserless.io/">Browserless.io</a></h2>
-I used puppetter to scrape the data
-x
-
 ## Tech Stack
 
 - **Frontend:** React, Tailwind CSS

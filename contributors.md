@@ -18,6 +18,8 @@ Here you add your name (it can be a nickname if you want to!).
 
 3️⃣ When done, save the file! And raise a PR!!!! 🎉
 
+> **NOTE**: PR are merged only if you've a ISSUE NUMBER. Means, your PR will not be merged, if you don't have a issue number! 😅
+
 <br/><br/><br/>
 
 # 🛍️ TrendTrove Contributors 

@@ -24,12 +24,16 @@ const allowedOrigin = process.env.ACCESS_URL;
 
 app.use((req, res, next) => {
 
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", allowedOrigin);
   // Set other CORS headers
   res.header("Access-Control-Allow-Credentials", true);
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  // Call the next middleware function
+
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200); // Respond with 200 OK to preflight requests
+  }
+    // Call the next middleware function
   next();
 
 });

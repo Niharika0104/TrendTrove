@@ -18,7 +18,7 @@ function ProductCard({prop}) {
     <div className='flex  items-center'>
         <div className='font-bold text-md mb-2 '>{prop.discountprice}</div>
         <div className=' line-through mb-2'>{prop.actualprice}</div>
-        <div className='text-red-600 font-medium mb-2 '>{`( ${Number.parseInt(prop.discountpercentage)?prop.discountpercentage:"20"} OFF )`}</div>
+        <div className='text-red-600 font-medium mb-2 '>{`( ${Number.parseInt(prop.discountpercentage)?prop.discountpercentage:"20"}% OFF )`}</div>
     </div>
   </div>
  

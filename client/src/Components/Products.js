@@ -30,7 +30,8 @@ function Products() {
   return (
     <>
     <Navbar/>
-    <div className=' mt-24 flex flex-wrap justify-center w-5/6 mx-auto gap-10'>
+    <div>
+    <div className='  mt-24 flex flex-wrap justify-center w-5/6 mx-auto gap-9'>
           {loading && <div>loading </div>}
     {data.length>0 &&
       data.map((item,i)=>{
@@ -44,7 +45,7 @@ function Products() {
    
     
    
-  
+  </div>
     </div>
     </>
   )

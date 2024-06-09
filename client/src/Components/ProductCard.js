@@ -9,7 +9,7 @@ function ProductCard({ prop }) {
 
   return (
     <div className="w-72 h-[400px] rounded-xl shadow-md overflow-hidden mx-auto flex flex-col">
-      <div className="relative flex-shrink-0 h-72  ">
+      <div className="relative flex-shrink-0 h-84  ">
         <img
           className="w-full h-full object-cover"
           src={prop.image}

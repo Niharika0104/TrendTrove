@@ -12,7 +12,9 @@ function Navbar() {
      <nav className="bg-darkblue p-3 fixed w-full top-0 z-50 shadow-sm">
   <div className="container mx-auto md:flex md:justify-between md:items-center">
     <div className="text-white font-bold hidden md:block">
-      <img src="site-logo.png" className='h-10'/>
+      <Link to="https://trend-trove-client-side.vercel.app/">
+        <img src="site-logo.png" className='h-10' alt="Company Logo" />
+      </Link>
     </div>
    
     <div class="hidden md:block ">

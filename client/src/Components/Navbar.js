@@ -2,7 +2,7 @@ import {React,useState} from 'react'
 import SearchBar from './SearchBar';
 
 import { Link } from 'react-router-dom';
-function Navbar() {
+function Navbar({query,onSearch}) {
     const [IsMobileView,setIsMobileView]=useState(false);
     const toggleMobileMenu=()=>{
         setIsMobileView(!IsMobileView);
@@ -30,7 +30,7 @@ function Navbar() {
     
       
     </div>
-    <SearchBar/>
+    <SearchBar  query={query} onSearch={onSearch} />
     <div className='m-5 flex gap-4' >
       <span className='cursor-pointer'>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className="w-6 h-6 ">

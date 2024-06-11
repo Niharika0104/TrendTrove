@@ -19,6 +19,7 @@ function App() {
           <Route path="/men" element={<Products />}></Route>
           <Route path="/women" element={<Products />}></Route>
           <Route path="/kids" element={<Products />}></Route>
+          <Route path="/:product" element={<Products />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>

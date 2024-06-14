@@ -13,7 +13,7 @@ const UserSchema = new mongoose.Schema(
     },
     phonenumber: {
       type: String,
-      required: true,
+     
     },
     password: {
         type: String,

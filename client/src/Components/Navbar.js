@@ -8,9 +8,12 @@ import { Link } from 'react-router-dom';
 import UserContext from '../Helper/Context';
 function Navbar({query,onSearch}) {
     const [IsMobileView,setIsMobileView]=useState(false);
+    const [hoveredIcon, setHoveredIcon] = useState(null);
+
     const toggleMobileMenu=()=>{
         setIsMobileView(!IsMobileView);
     }
+
     // const { loggedIn, user ,setLoggedIn,setUser} = useContext(UserContext);
     // console.log(loggedIn);
     // console.log("user data in navbar",user);
@@ -31,6 +34,22 @@ function Navbar({query,onSearch}) {
     };
 
   
+
+
+    const handleMouseEnter = (icon) => {
+      setHoveredIcon(icon);
+    };
+  
+    const handleMouseLeave = () => {
+      setHoveredIcon(null);
+    };
+  
+    const naviconStyle = (icon) => ({
+      fill: hoveredIcon === icon ? '#8BBCF3' : 'none',
+      transform: hoveredIcon === icon ? 'scale(1.07)' : 'scale(1)',
+      transition: 'transform 0.2s, fill 0.2s'
+    });
+
   return (
     <div>
      <nav className="bg-darkblue p-3 fixed w-full top-0 z-50 shadow-sm">
@@ -54,6 +73,7 @@ function Navbar({query,onSearch}) {
     
       
     </div>
+
     <SearchBar  query={query} onSearch={onSearch} />
     <div className='m-5 flex gap-4 items-center' >
       <span className='cursor-pointer'>

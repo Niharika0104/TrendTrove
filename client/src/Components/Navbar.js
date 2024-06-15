@@ -24,6 +24,7 @@ function Navbar({ setSearchedData }) {
     transition: "transform 0.2s, fill 0.2s",
   });
 
+
   return (
     <div>
       <nav className="bg-darkblue p-3 fixed w-full top-0 z-50 shadow-sm">
@@ -150,7 +151,6 @@ function Navbar({ setSearchedData }) {
             </div>
           </div>
         </div>
-
         {/* Mobile menu */}
         {IsMobileView && (
           <div className="md:hidden fixed inset-0 bg-gray-800 bg-opacity-75 z-50">
@@ -204,5 +204,4 @@ function Navbar({ setSearchedData }) {
     </div>
   );
 }
-
 export default Navbar;

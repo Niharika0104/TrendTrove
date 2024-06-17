@@ -1,12 +1,12 @@
 # 📃 Guidelines
-Here you add your name (it can be a nickname if you want to!). 
+Anu S M(it can be a nickname if you want to!). 
 
 1️⃣  Copy the below code, adjust it accordingly and paste it into QuineContributors.md:
 
 ```
             <td align="center">
-                <a href="https://github.com/YOUR_USERNAME">
-                    <sub><b>YOUR NAME</b></sub>
+                <a href="https://github.com/Anu-S-M">
+                    <sub><b>Anu S M</b></sub>
                     <br />
                 </a> 
             </td>

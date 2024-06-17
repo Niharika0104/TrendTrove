@@ -25,7 +25,7 @@ These are the steps required to install/run the project.
 1. **Create a new branch:**
 
     ```bash
-    git checkout -b your-branch-name
+    git checkout -b anu-contribution
     ```
 
 2. **Clone the repository into the new branch:**

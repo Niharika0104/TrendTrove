@@ -2,12 +2,16 @@ import React from 'react'
 
 function CategoryCard(props) {
   return (
-    <div className='mx-5 my-2'>
-      <img src={props.image} className='h-48 w-40'/>
-      <p>{props.title}</p>
-      <p>{props.discount}</p>
+    <div className="mx-5 my-2 flex flex-col ">
+ <img
+  src={props.image}
+  className="h-52 w-40 object-cover rounded-lg"
+  alt={props.title}
+/>
 
-    </div>
+  <p className="mt-2 ">{props.title}</p>
+  <p className="">{props.discount}</p>
+</div>
   )
 }
 

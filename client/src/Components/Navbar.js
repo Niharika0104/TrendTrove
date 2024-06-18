@@ -4,11 +4,15 @@ import { MdKeyboardArrowLeft as LeftArrowIcon } from "react-icons/md";
 import { IoMdSearch as SearchIcon } from "react-icons/io";
 import { MdKeyboardArrowRight as RightArrowIcon } from "react-icons/md";
 import { Link } from "react-router-dom";
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+import UserContext from '../Helper/Context';
 
-function Navbar() {
-  const [IsMobileView, setIsMobileView] = useState(false);
-  const [hoveredIcon, setHoveredIcon] = useState(null);
-  const [isShowSearch, setIsShowSearch] = useState(false);
+function Navbar({query,onSearch}) {
+    const [IsMobileView,setIsMobileView]=useState(false);
+    const [hoveredIcon, setHoveredIcon] = useState(null);
+    const [isShowSearch, setIsShowSearch] = useState(false);
+
 
   const toggleSearch = () => {
     setIsShowSearch(!isShowSearch);
@@ -31,6 +35,21 @@ function Navbar() {
     transform: hoveredIcon === icon ? "scale(1.07)" : "scale(1)",
     transition: "transform 0.2s, fill 0.2s",
   });
+  
+   const {user ,setLoggedIn,setUser,loggedIn} =useContext(UserContext);
+    const navigate = useNavigate();
+    console.log("user data in navbar ", user);
+
+    const handleLogout = async () => {
+        try {
+            await axios.post('http://localhost:5000/logout', {}, { withCredentials: true });
+            setLoggedIn(false);
+            setUser(null);
+            navigate('/'); // Redirect to the home page or login page
+        } catch (error) {
+            console.error('Logout failed:', error);
+        }
+    };
 
   useEffect(() => {
     if (document) {
@@ -38,6 +57,8 @@ function Navbar() {
         IsMobileView || isShowSearch ? "hidden" : "auto";
     }
   }, [IsMobileView, isShowSearch]);
+  
+  
 
   return (
     <div>
@@ -212,6 +233,7 @@ function Navbar() {
               className="w-full p-2 focus:outline-none rounded-lg border border-slate-300"
             ></input>
           </div>
+
         </div>
 
         {/* Mobile menu */}
@@ -260,6 +282,7 @@ function Navbar() {
               </div>
             </Link>
           </div>
+
           <div className="mt-6 text-xl px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center  ">
             <Link to="/profile">
               <div className="flex items-center justify-between pl-4 pr-8">

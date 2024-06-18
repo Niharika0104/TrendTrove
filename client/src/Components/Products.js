@@ -8,6 +8,7 @@ function Products() {
   const [loading,setloading]=useState(true);
   const {product}= useParams();
   useEffect(() => {
+    
     const fetchData = async () => {
       try {
         console.log(process.env.REACT_APP_API_URL,"url");

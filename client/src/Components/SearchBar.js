@@ -9,6 +9,7 @@ function SearchBar() {
     e.preventDefault();
     // console.log('searching for query', query);
     navigate(`/category/${query}`);
+
   };
 
   return (
@@ -16,13 +17,17 @@ function SearchBar() {
       <div className="inline dark:bg-gray-800 relative">
         <input
           value={query}
+
           onChange={(e) => setQuery(e.target.value)}
+
           type="text"
           name="q"
           className="border h-9 shadow px-4 py-2 rounded-full dark:text-gray-800 dark:border-gray-700 dark:bg-gray-200"
           placeholder="search"
         />
+
         <button type="button" onClick={handleSearch}>
+
           <svg
             className="text-teal-400 h-5 w-5 absolute top-1 right-3 fill-current dark:text-teal-300"
             xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +43,6 @@ function SearchBar() {
           </svg>
         </button>
       </div>
-
     </div>
   );
 }

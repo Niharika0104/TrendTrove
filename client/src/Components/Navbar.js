@@ -1,8 +1,12 @@
-import {React,useState} from 'react'
+import {React,useContext,useState} from 'react'
 import SearchBar from './SearchBar';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+
 
 import { Link } from 'react-router-dom';
-function Navbar() {
+import UserContext from '../Helper/Context';
+function Navbar({query,onSearch}) {
     const [IsMobileView,setIsMobileView]=useState(false);
     const [hoveredIcon, setHoveredIcon] = useState(null);
 
@@ -10,6 +14,26 @@ function Navbar() {
         setIsMobileView(!IsMobileView);
     }
 
+    // const { loggedIn, user ,setLoggedIn,setUser} = useContext(UserContext);
+    // console.log(loggedIn);
+    // console.log("user data in navbar",user);
+    
+    const {user ,setLoggedIn,setUser,loggedIn} =useContext(UserContext);
+    const navigate = useNavigate();
+    console.log("user data in navbar ", user);
+
+    const handleLogout = async () => {
+        try {
+            await axios.post('http://localhost:5000/logout', {}, { withCredentials: true });
+            setLoggedIn(false);
+            setUser(null);
+            navigate('/'); // Redirect to the home page or login page
+        } catch (error) {
+            console.error('Logout failed:', error);
+        }
+    };
+
+ 
     const handleMouseEnter = (icon) => {
       setHoveredIcon(icon);
     };
@@ -47,6 +71,9 @@ function Navbar() {
     
       
     </div>
+
+   
+
     <SearchBar/>
     <div className='m-5 flex gap-4' >
       <span className="cursor-pointer" onMouseEnter={() => handleMouseEnter('icon1')} onMouseLeave={handleMouseLeave} style={naviconStyle('icon1')}>
@@ -67,6 +94,7 @@ function Navbar() {
         </svg>
       </span>
     </div>
+
  
     <div className="md:hidden ">
      <div className='flex justify-start gap-4'>
@@ -101,6 +129,7 @@ function Navbar() {
           </div>
         </div>
       )}
+       
 </nav>
 
     </div>

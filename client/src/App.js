@@ -7,10 +7,17 @@ import Products from './Components/Products';
 import HomePage from './Components/HomePage';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
+import NotFound from './Components/NotFound';
+import UserContextProvider from './Helper/UserContextProvider';
+import axios from 'axios';
+axios.defaults.baseURL = 'http://127.0.0.1:5000'
+axios.defaults.withCredentials = true;
+
 
 function App() {
+  
   return (
-    <>
+    <UserContextProvider>
     <BrowserRouter>
     <Routes>
 
@@ -23,10 +30,7 @@ function App() {
       <Route path="/:product" element={<Products/>}></Route>
 </Routes>
 </BrowserRouter>
-   
-
- 
-    </>
+    </UserContextProvider>
   );
 }
 

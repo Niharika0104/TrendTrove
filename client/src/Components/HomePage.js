@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import data from '../Assests/HomePageData';
@@ -8,25 +8,18 @@ import CarouselComponent from './CarouselComponent';
 
 function HomePage() {
   const navigate = useNavigate();
-  const [query, setQuery] = useState('');
 
-  const handleSearch = (searchQuery) => {
-    setQuery(searchQuery);
-  };
-
-  const filteredData = data.filter((item) =>
-    item.title.toLowerCase().includes(query.toLowerCase())
-  );
+ 
 
   return (
     <div>
-      <Navbar query={query} onSearch={handleSearch} />
+      <Navbar  />
       <CarouselComponent />
       <Icons />
       <div>
         <div className="font-extrabold text-center">SHOP BY CATEGORY</div>
         <div className="flex flex-wrap justify-center gap-3 w-5/6 mx-auto">
-          {filteredData.map((item, i) => (
+          {data.map((item, i) => (
             <div
               key={i}
               onClick={() => navigate("/" + item.search)}

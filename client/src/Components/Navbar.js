@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 import UserContext from '../Helper/Context';
-function Navbar({query,onSearch}) {
+function Navbar() {
     const [IsMobileView,setIsMobileView]=useState(false);
     const toggleMobileMenu=()=>{
         setIsMobileView(!IsMobileView);
@@ -54,7 +54,7 @@ function Navbar({query,onSearch}) {
     
       
     </div>
-    <SearchBar  query={query} onSearch={onSearch} />
+    <SearchBar />
     <div className='m-5 flex gap-4 items-center' >
       <span className='cursor-pointer'>
      

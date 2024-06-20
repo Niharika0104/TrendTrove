@@ -2,46 +2,69 @@ const scrape = require('./Script');
 const express = require("express");
 const app = express();
 const db=require('./config/db.js')
+const User =require('./models/User.js')
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
+const cors = require('cors');
+
 require("dotenv").config();
+
+const allowedOrigin = process.env.FRONTEND_URL;
+
+const options={
+  origin: allowedOrigin,
+  credentials: true
+}
+app.use(cors(options));
+
 app.use(express.urlencoded({ extended: true }));
-//for json stringify
 app.use(express.json());
 
 
 
 db();
 const productsrouter= require("./routes/products.js");
-// (async () => {
-//     const data = await scrape();
-//    // console.log(data); // Do something with the scraped data
-// })()
+const registerrouter=require("./routes/register.js");
+const loginrouter =require("./routes/login.js")
+const logoutrouter= require("./routes/logout.js")
+const profileRouter = require('./routes/profile');
+
 app.use(express.urlencoded({ extended: true }));
 //for json stringify
 app.use(express.json());
+app.use(cookieParser());
+
 
 //allowed origins
-const allowedOrigin = process.env.ACCESS_URL;
 
 app.use((req, res, next) => {
 
-  res.header("Access-Control-Allow-Origin", allowedOrigin);
-  // Set other CORS headers
-  res.header("Access-Control-Allow-Credentials", true);
+  res.header("Access-Control-Allow-Origin", options.origin);
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(200); // Respond with 200 OK to preflight requests
-  }
-    // Call the next middleware function
+  
+   
   next();
 
 });
+
+
 app.use(productsrouter);
+app.use(registerrouter);
+app.use(loginrouter);
+app.use(logoutrouter);
+app.use(profileRouter);
+
+
+  
+  
+
 
 app.listen( process.env.PORT, () => {
     console.log(`server is listening on ${process.env.PORT}`);
   });
+  
   app.get("/", (req, res) => {
     res.send("welcome");
-  });
+  }); 

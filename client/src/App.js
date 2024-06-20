@@ -7,10 +7,19 @@ import Products from './Components/Products';
 import HomePage from './Components/HomePage';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
+import NotFound from './Components/NotFound';
+import UserContextProvider from './Helper/UserContextProvider';
+import axios from 'axios';
+
+import CategoryPage from './Components/CategoryPage';
+
+
+
 
 function App() {
+  
   return (
-    <>
+    <UserContextProvider>
     <BrowserRouter>
     <Routes>
 
@@ -20,13 +29,18 @@ function App() {
       <Route exact path="/" element={ <HomePage/>} ></Route>
       <Route exact path="/login" element={ <Login/>} />
       <Route path="/sign-up" element={<Register/>}></Route>
+
+      <Route path="/category/:query" element={<CategoryPage />} />
+      <Route path="/men" element={<Products/>}></Route>
+      <Route path="/women" element={<Products/>}></Route>
+      <Route path="/kids" element={<Products/>}></Route>
+      <Route path="*" element={<NotFound/>}></Route>
+
       <Route path="/:product" element={<Products/>}></Route>
+
 </Routes>
 </BrowserRouter>
-   
-
- 
-    </>
+    </UserContextProvider>
   );
 }
 

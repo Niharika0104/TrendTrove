@@ -17,7 +17,7 @@ function Login(){
       return;
     }
     try {
-     const {data} =await axios.post('http://localhost:5000/login', { email, password },{withCredentials:true});
+     const {data} =await axios.post(`${process.env.REACT_APP_API_URL}/login`, { email, password },{withCredentials:true});
       // const {user,message}= response.data;
       // handleLoginSuccess(user);
       setUser(data);
@@ -71,8 +71,7 @@ return(
        <span>Not a user?<a href='/sign-up' className='px-5 italic font-bold underline text-lightblue'>Register here</a></span>
       </div>
     </div>
-    {loginError && <div className="text-red-500 text-sm mt-2">{loginError}</div>}
-    {loggedIn ? <h1>loggd in </h1>: <h1>not logged in   </h1>}
+   
    
   </form>
 </div>

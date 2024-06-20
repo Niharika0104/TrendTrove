@@ -95,7 +95,7 @@ function Navbar() {
             {user &&   <button onClick={handleLogout} className="text-white border px-3 py-1 hover:text-blue-300">
                 Logout
               </button>}
-              {!user &&   <button onClick={handleLogout} className=" border px-4 py-1 rounded-full bg-white text-indigo-950 hover:bg-indigo-900 hover:text-white">
+              {!user &&   <button onClick={()=>{navigate("/login")}} className=" border px-4 py-1 rounded-full bg-white text-indigo-950 hover:bg-darkblue hover:text-white border-white">
                 Login
               </button>}
  

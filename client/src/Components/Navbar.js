@@ -2,7 +2,7 @@ import {React,useContext,useState} from 'react'
 import SearchBar from './SearchBar';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
-import { SlHandbag } from "react-icons/sl";
+
 
 import { Link } from 'react-router-dom';
 import UserContext from '../Helper/Context';
@@ -95,7 +95,7 @@ function Navbar() {
             {user &&   <button onClick={handleLogout} className="text-white border px-3 py-1 hover:text-blue-300">
                 Logout
               </button>}
-              {!user &&   <button onClick={()=>{navigate("/login")}} className=" border px-4 py-1 rounded-full bg-white text-indigo-950 hover:bg-darkblue hover:text-white border-white">
+              {!user &&   <button onClick={()=>{navigate("/login")}} className="border px-4 py-1 rounded-full bg-white text-indigo-950 hover:bg-darkblue hover:text-white border-white">
                 Login
               </button>}
  

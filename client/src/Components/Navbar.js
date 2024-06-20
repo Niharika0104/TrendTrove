@@ -32,7 +32,7 @@ function Navbar() {
 
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:5000/logout', {}, { withCredentials: true });
+            await axios.post(`${process.env.REACT_APP_API_URL}/logout`, {}, { withCredentials: true });
             setLoggedIn(false);
             setUser(null);
             navigate('/'); // Redirect to the home page or login page

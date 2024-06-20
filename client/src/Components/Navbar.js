@@ -2,35 +2,20 @@ import {React,useContext,useState} from 'react'
 import SearchBar from './SearchBar';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { SlHandbag } from "react-icons/sl";
+
 import { Link } from 'react-router-dom';
 import UserContext from '../Helper/Context';
 function Navbar() {
     const [IsMobileView,setIsMobileView]=useState(false);
+    const [hoveredIcon, setHoveredIcon] = useState(null);
     const toggleMobileMenu=()=>{
         setIsMobileView(!IsMobileView);
     }
-
-    // const { loggedIn, user ,setLoggedIn,setUser} = useContext(UserContext);
-    // console.log(loggedIn);
-    // console.log("user data in navbar",user);
+   
     
     const {user ,setLoggedIn,setUser,loggedIn} =useContext(UserContext);
     const navigate = useNavigate();
-
-    console.log("user data in navbar ", user);
-
-    const handleLogout = async () => {
-        try {
-            await axios.post('http://localhost:5000/logout', {}, { withCredentials: true });
-            setLoggedIn(false);
-            setUser(null);
-            navigate('/'); // Redirect to the home page or login page
-        } catch (error) {
-            console.error('Logout failed:', error);
-        }
-    };
-
- 
     const handleMouseEnter = (icon) => {
       setHoveredIcon(icon);
     };
@@ -45,6 +30,16 @@ function Navbar() {
       transition: 'transform 0.2s, fill 0.2s'
     });
 
+    const handleLogout = async () => {
+        try {
+            await axios.post(`${process.env.REACT_APP_API_URL}/logout`, {}, { withCredentials: true });
+            setLoggedIn(false);
+            setUser(null);
+            navigate('/'); // Redirect to the home page or login page
+        } catch (error) {
+            console.error('Logout failed:', error);
+        }
+    };
 
   
   return (
@@ -52,7 +47,7 @@ function Navbar() {
      <nav className="bg-darkblue p-3 fixed w-full top-0 z-50 shadow-sm">
   <div className="container mx-auto md:flex md:justify-between md:items-center">
     <div className="text-white font-bold hidden md:block">
-      <Link to="https://trend-trove-client-side.vercel.app/">
+      <Link to="/">
         <img src="site-logo.png" className='h-10' alt="Company Logo" />
       </Link>
     </div>
@@ -70,39 +65,39 @@ function Navbar() {
     
       
     </div>
-
     <SearchBar />
     <div className='m-5 flex gap-4 items-center' >
-      <span className='cursor-pointer'>
-     
-     
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className="w-6 h-6 ">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-</svg>
-</span>
-<span  className='cursor-pointer'>
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-</svg>
-</span>
-<span  className='cursor-pointer'>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-</svg>
-</span>
+    <span className="cursor-pointer" onMouseEnter={() => handleMouseEnter('icon1')} onMouseLeave={handleMouseLeave} style={naviconStyle('icon1')}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill={hoveredIcon === 'icon1' ? '#fff' : 'none'} viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className="w-6 h-6 navicon">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+        </svg>
+      </span>
+      
+      <span className="cursor-pointer" onMouseEnter={() => handleMouseEnter('icon2')} onMouseLeave={handleMouseLeave} style={naviconStyle('icon2')}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill={hoveredIcon === 'icon2' ? '#fff' : 'none'} viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className="w-6 h-6 navicon">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </svg>
+      </span>
+
+      <span className="cursor-pointer" onMouseEnter={() => handleMouseEnter('icon3')} onMouseLeave={handleMouseLeave} style={naviconStyle('icon3')}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill={hoveredIcon === 'icon3' ? '#fff' : 'none'} viewBox="0 0 24 24" strokeWidth={1.5} stroke="#fff" className="w-6 h-6 navicon">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+      </span>
+
+          
+</div>
 {user && (
               <div className=' text-white border px-3 py-1'>
                 {user.name}
               </div>
            )}
-               <button onClick={handleLogout} className="text-white border px-3 py-1 hover:text-blue-300">
+            {user &&   <button onClick={handleLogout} className="text-white border px-3 py-1 hover:text-blue-300">
                 Logout
-              </button>
-          
-</div>
-
-
-
+              </button>}
+              {!user &&   <button onClick={()=>{navigate("/login")}} className=" border px-4 py-1 rounded-full bg-white text-indigo-950 hover:bg-darkblue hover:text-white border-white">
+                Login
+              </button>}
  
     <div className="md:hidden ">
      <div className='flex justify-start gap-4'>
@@ -118,6 +113,7 @@ function Navbar() {
         </div>
        
       </div>
+      
       {/* Mobile menu */}
       {IsMobileView && (
         <div className="md:hidden fixed inset-0 bg-gray-800 bg-opacity-75 z-50">
@@ -138,6 +134,7 @@ function Navbar() {
       )}
        
 </nav>
+
     </div>
   )
 }

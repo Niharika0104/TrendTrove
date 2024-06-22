@@ -1,0 +1,46 @@
+.men-section {
+    padding: 20px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-name {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .product-price {
+    color: #888;
+  }
+  h1{
+    color: rgb(63, 22, 22);
+    font-size: 80px;
+    font-weight: 500;
+    margin-left: 550px;
+    margin-top: -40px;
+  }
+  h2{
+    color: rgb(45, 64, 17);
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  

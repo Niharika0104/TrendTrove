@@ -8,10 +8,9 @@ function Products() {
   const [loading,setloading]=useState(true);
   const {product}= useParams();
   useEffect(() => {
-    
     const fetchData = async () => {
       try {
-       
+        console.log(process.env.REACT_APP_API_URL,"url");
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/getproducts`, { query: product });
    console.log(res.data)
    if(data){
@@ -31,8 +30,7 @@ function Products() {
   return (
     <>
     <Navbar/>
-    <div>
-    <div className='  mt-24 flex flex-wrap justify-center w-5/6 mx-auto gap-9'>
+    <div className=' mt-24 flex flex-wrap justify-center w-5/6 mx-auto gap-10'>
           {loading && <div>loading </div>}
     {data.length>0 &&
       data.map((item,i)=>{
@@ -46,7 +44,7 @@ function Products() {
    
     
    
-  </div>
+  
     </div>
     </>
   )

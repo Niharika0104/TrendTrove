@@ -1,0 +1,38 @@
+/* Reset some default browser styles */
+body, html, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styles for the navigation bar */
+  nav {
+    background-color: #003366; /* Adjust the color as needed */
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center the nav items */
+  }
+  
+  nav ul li {
+    margin: 0 15px; /* Adjust the spacing between nav items */
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline; /* Add a hover effect if needed */
+  }
+  
+  /* Ensure the main content is below the nav bar */
+  main {
+    padding: 20px;
+  }
+  

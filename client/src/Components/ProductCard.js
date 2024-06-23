@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ProductCard({ prop }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -7,9 +8,11 @@ function ProductCard({ prop }) {
     setIsFavorite(!isFavorite);
   };
 
+  const navigate = useNavigate();
+
   return (
-    <div className="w-72 h-[400px] rounded-xl shadow-md overflow-hidden mx-auto flex flex-col cursor-pointer">
-      <div className="relative flex-shrink-0 h-84  ">
+    <div className="w-72 h-[400px] rounded-xl shadow-md overflow-hidden mx-auto flex flex-col cursor-pointer relative group">
+      <div className="flex-shrink-0 h-full">
         <img
           className="w-full h-full object-cover"
           src={prop.image}
@@ -35,7 +38,16 @@ function ProductCard({ prop }) {
           </svg>
         </button>
       </div>
-      <div className="flex flex-col justify-end px-6 py-3 bg-gradient-to-r from-blue-50 to-blue-0 h-full">
+      <div className="flex flex-col justify-end px-6 py-3 bg-gradient-to-r from-blue-50 to-blue-0 absolute bottom-0 w-full h-28">
+        <div className="flex justify-end">
+          {/* navigate button on hover */}
+          <button
+            className="hidden group-hover:block bg-darkblue text-white px-4 py-1 rounded-full"
+            onClick={() => navigate(`/product/${prop._id}`)}
+          >
+            View
+          </button>
+        </div>
         <div>
           <div className="font-bold text-xl text-gray-900">{prop.brand}</div>
           <p className="text-gray-700 text-base truncate">{prop.title}</p>

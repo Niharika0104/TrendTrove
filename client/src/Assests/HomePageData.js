@@ -11,12 +11,72 @@ const data = [{
     search:"mens-ethnic-wear"
 },
 {
-    image: "sarees.jpg",
+    image: "https://maharaniwomen.b-cdn.net/wp-content/uploads/2021/09/A2.jpg",
     title: "Sarees",
     discount: "30-80% OFF",
     search:"Sarees"
 },
 {
+    "image": "https://maharaniwomen.b-cdn.net/wp-content/uploads/2021/09/A2.jpg",
+    "title": "Sarees",
+    "discount": "30-80% OFF",
+    "search": "Sarees"
+  },
+  {
+    "image": "https://i.pinimg.com/originals/50/96/f5/5096f57f5ca2d5b0a31f1f55399c0763.jpg",
+    "title": "Elegant Silk Saree",
+    "discount": "25-70% OFF",
+    "search": "Elegant-Silk-Saree"
+  },
+  {
+    "image": "https://i.pinimg.com/originals/2a/0c/11/2a0c1195ac0e81c5659243343fed3ab7.jpg",
+    "title": "Cotton Printed Saree",
+    "discount": "20-60% OFF",
+    "search": "Cotton-Printed-Saree"
+  },
+  {
+    "image": "https://cdn.sareeka.com/image/data2021/cotton-printed-multi-colour-printed-saree-186983.jpg",
+    "title": "Designer Wedding Saree",
+    "discount": "40-90% OFF",
+    "search": "Designer-Wedding-Saree"
+  },
+  {
+    "image": "https://dvanza.com/wp-content/uploads/Beautiful-Floral-Printed-Cotton-saree-dvz0003045.jpeg",
+    "title": "Traditional Banarasi Saree",
+    "discount": "35-75% OFF",
+    "search": "Traditional-Banarasi-Saree"
+  },
+  {
+    "image": "https://dvanza.com/wp-content/uploads/Beautiful-Floral-Printed-Cotton-saree-dvz0003045.jpeg",
+    "title": "Embroidered Georgette Saree",
+    "discount": "30-70% OFF",
+    "search": "Embroidered-Georgette-Saree"
+  },
+  {
+    "image": "https://th.bing.com/th/id/OIP.g3mCUzVgHb9-FHoKAmIBdAHaLH?w=900&h=1350&rs=1&pid=ImgDetMain",
+    "title": "Kanjivaram Silk Saree",
+    "discount": "40-80% OFF",
+    "search": "Kanjivaram-Silk-Saree"
+  },
+  {
+    "image": "https://i.pinimg.com/originals/f0/ff/ea/f0ffea5026977dc2bd6c08778a4c3db2.jpg",
+    "title": "Bollywood Style Saree",
+    "discount": "25-60% OFF",
+    "search": "Bollywood-Style-Saree"
+  },
+  {
+    "image": "https://th.bing.com/th/id/OIP.FicY4-xbtNJDcbh8HW6clwHaLH?w=500&h=750&rs=1&pid=ImgDetMain",
+    "title": "Chiffon Party Wear Saree",
+    "discount": "30-65% OFF",
+    "search": "Chiffon-Party-Wear-Saree"
+  },
+  {
+    "image": "https://th.bing.com/th/id/OIP.FicY4-xbtNJDcbh8HW6clwHaLH?w=500&h=750&rs=1&pid=ImgDetMain",
+    "title": "Casual Cotton Saree",
+    "discount": "20-50% OFF",
+    "search": "Casual-Cotton-Saree"
+  },
+  {
     image: "mens-casual-wear.jpg",
     title: "Mens's Casual Wear",
     discount: "50-80% OFF", 

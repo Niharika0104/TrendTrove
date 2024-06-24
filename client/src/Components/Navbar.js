@@ -40,9 +40,17 @@ function Navbar({query,onSearch}) {
     const navigate = useNavigate();
     console.log("user data in navbar ", user);
 
+  useEffect(() => {
+    if (document) {
+      document.body.style.overflow =
+        IsMobileView || isShowSearch ? "hidden" : "auto";
+    }
+  }, [IsMobileView, isShowSearch]);
+  
+ 
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:5000/logout', {}, { withCredentials: true });
+            await axios.post(`${process.env.REACT_APP_API_URL}/logout`, {}, { withCredentials: true });
             setLoggedIn(false);
             setUser(null);
             navigate('/'); // Redirect to the home page or login page
@@ -51,15 +59,7 @@ function Navbar({query,onSearch}) {
         }
     };
 
-  useEffect(() => {
-    if (document) {
-      document.body.style.overflow =
-        IsMobileView || isShowSearch ? "hidden" : "auto";
-    }
-  }, [IsMobileView, isShowSearch]);
   
-  
-
   return (
     <div>
       <nav className="bg-darkblue p-3 fixed w-full top-0 z-50 shadow-sm">
@@ -233,7 +233,6 @@ function Navbar({query,onSearch}) {
               className="w-full p-2 focus:outline-none rounded-lg border border-slate-300"
             ></input>
           </div>
-
         </div>
 
         {/* Mobile menu */}
@@ -313,9 +312,21 @@ function Navbar({query,onSearch}) {
             </Link>
           </div>
         </div>
+        {user && (
+              <div className=' text-white border px-3 py-1'>
+                {user.name}
+              </div>
+           )}
+            {user &&   <button onClick={handleLogout} className="text-white border px-3 py-1 hover:text-blue-300">
+                Logout
+              </button>}
+              {!user &&   <button onClick={()=>{navigate("/login")}} className="border px-4 py-1 rounded-full bg-white text-indigo-950 hover:bg-darkblue hover:text-white border-white">
+                Login
+              </button>}
       </nav>
     </div>
   );
 }
 
 export default Navbar;
+

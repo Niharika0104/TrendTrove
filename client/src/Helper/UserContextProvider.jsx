@@ -10,7 +10,7 @@ const UserContextProvider = ({ children }) => {
   
   useEffect(() => {
     if(!user){
-      axios.get('http://localhost:5000/profile', { withCredentials: true }).then(({data})=>{
+      axios.get(`${process.env.REACT_APP_API_URL}/profile`, { withCredentials: true }).then(({data})=>{
        setUser(data)
       })
     }

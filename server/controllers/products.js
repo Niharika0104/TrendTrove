@@ -23,4 +23,41 @@ catch(ex){
 
 }
 }
-module.exports={getProducts}
+
+// function to get best sellers
+const getBestSellers = async (req, res) => {
+  try {
+    const categoryData = await CategoryModel.find();
+    if (!categoryData) {
+      return res.json({ error: "category not found" });
+    }
+    const products = categoryData.map((category) => {
+      return category.list;
+    }).flat();
+    //sorting products based on sales percentage
+    products.sort((a, b) => {
+      return calculateSalesPercentage(b) - calculateSalesPercentage(a);
+    });
+    res.json(products.slice(0, 5));
+  }
+  catch (err) {
+    res.json({error: err.message})
+  }
+}
+
+// function to calculate sales percentage
+const calculateSalesPercentage = (data, i) => {
+  if(!data.total){
+    return 0;
+  }
+  if(!data.available){
+    return data.total;
+  }
+  const sales = data.total - data.available;
+  return (sales / data.total) * 100;
+}
+
+module.exports={
+  getProducts,
+  getBestSellers
+}

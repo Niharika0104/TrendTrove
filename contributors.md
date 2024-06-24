@@ -34,8 +34,8 @@ Here you add your name (it can be a nickname if you want to!).
                 </a> 
             </td>
             <td align="center">
-                <a href="github_Id here"">
-                    <sub><b>name here</b></sub>
+                <a href="https://github.com/rohittcodes">
+                    <sub><b>Rohitt</b></sub>
                     <br />
                 </a> 
             </td>

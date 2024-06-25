@@ -11,7 +11,7 @@ function Products() {
     
     const fetchData = async () => {
       try {
-        console.log(process.env.REACT_APP_API_URL,"url");
+       
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/getproducts`, { query: product });
    console.log(res.data)
    if(data){

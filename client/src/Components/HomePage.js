@@ -9,6 +9,7 @@ function HomePage() {
   const { setSelectedProducts } = useContext(UserContext);
   const [products, setProducts] = useState([]);
 
+
   useEffect(() => {
     fetchProducts();
   }, []); 
@@ -41,6 +42,7 @@ function HomePage() {
     ]);
   };
 
+
   return (
     <div>
       <Navbar />
@@ -49,8 +51,10 @@ function HomePage() {
       <div>
         <div className="font-extrabold text-center">SHOP BY CATEGORY</div>
         <div className="flex flex-wrap justify-center gap-3 w-5/6 mx-auto">
+
           {products.map((item) => (
             <div key={item._id} className="cursor-pointer">
+
               <CategoryCard
                 image={item.image}
                 title={item.title}

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import UserContext from '../Helper/Context';
 function Navbar() {
     const [IsMobileView,setIsMobileView]=useState(false);
+    const [hoveredIcon, setHoveredIcon] = useState(null);
     const toggleMobileMenu=()=>{
         setIsMobileView(!IsMobileView);
     }
@@ -13,9 +14,26 @@ function Navbar() {
     
     const {user ,setLoggedIn,setUser,loggedIn,selectedProducts} =useContext(UserContext);
     const navigate = useNavigate();
+
+
+    const handleMouseEnter = (icon) => {
+      setHoveredIcon(icon);
+    };
+  
+    const handleMouseLeave = () => {
+      setHoveredIcon(null);
+    };
+  
+    const naviconStyle = (icon) => ({
+      fill: hoveredIcon === icon ? '#8BBCF3' : 'none',
+      transform: hoveredIcon === icon ? 'scale(1.07)' : 'scale(1)',
+      transition: 'transform 0.2s, fill 0.2s'
+    });
+
+
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:5000/logout', {}, { withCredentials: true });
+            await axios.post(`${process.env.REACT_APP_API_URL}/logout`, {}, { withCredentials: true });
             setLoggedIn(false);
             setUser(null);
             navigate('/'); // Redirect to the home page or login page
@@ -30,7 +48,7 @@ function Navbar() {
      <nav className="bg-darkblue p-3 fixed w-full top-0 z-50 shadow-sm">
   <div className="container mx-auto md:flex md:justify-between md:items-center">
     <div className="text-white font-bold hidden md:block">
-      <Link to="https://trend-trove-client-side.vercel.app/">
+      <Link to="/">
         <img src="site-logo.png" className='h-10' alt="Company Logo" />
       </Link>
     </div>
@@ -49,6 +67,7 @@ function Navbar() {
       
     </div>
     <SearchBar />
+
     <div className='m-5 flex gap-4 items-center  relative ' >
       <span className='cursor-pointer'>
      
@@ -72,17 +91,18 @@ function Navbar() {
      {selectedProducts.length}
    </span>
 </Link>
+
 {user && (
               <div className=' text-white border px-3 py-1'>
                 {user.name}
               </div>
            )}
-               <button onClick={handleLogout} className="text-white border px-3 py-1 hover:text-blue-300">
+            {user &&   <button onClick={handleLogout} className="text-white border px-3 py-1 hover:text-blue-300">
                 Logout
-              </button>
-          
-</div>
-
+              </button>}
+              {!user &&   <button onClick={()=>{navigate("/login")}} className="border px-4 py-1 rounded-full bg-white text-indigo-950 hover:bg-darkblue hover:text-white border-white">
+                Login
+              </button>}
  
     <div className="md:hidden ">
      <div className='flex justify-start gap-4'>

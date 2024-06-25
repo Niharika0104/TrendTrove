@@ -22,12 +22,9 @@ const registerrouter=require("./routes/register.js");
 const loginrouter =require("./routes/login.js")
 const logoutrouter= require("./routes/logout.js")
 const profileRouter = require('./routes/profile');
-// const verifyToken = require('./controllers/profile.js') for future use 
+const productRouter =require('./routes/product.js')
+const saveProductRouter=require('./routes/product.js')
 
-// (async () => {
-//     const data = await scrape();
-//    // console.log(data); // Do something with the scraped data
-// })()
 app.use(express.urlencoded({ extended: true }));
 //for json stringify
 app.use(express.json());
@@ -66,6 +63,8 @@ app.use(registerrouter);
 app.use(loginrouter);
 app.use(logoutrouter);
 app.use(profileRouter);
+app.use(productRouter)
+app.use(saveProductRouter)
 
 
 app.get('/profile', async (req, res) => {

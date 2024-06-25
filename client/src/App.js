@@ -10,6 +10,7 @@ import NotFound from './Components/NotFound';
 import UserContextProvider from './Helper/UserContextProvider';
 import axios from 'axios';
 import CategoryPage from './Components/CategoryPage';
+import CheckOut from './Components/CheckOut';
 axios.defaults.baseURL = 'http://127.0.0.1:5000'
 axios.defaults.withCredentials = true;
 
@@ -27,6 +28,7 @@ function App() {
       <Route path="/women" element={<Products/>}></Route>
       <Route path="/kids" element={<Products/>}></Route>
       <Route path="*" element={<NotFound/>}></Route>
+      <Route path='/cart' element={<CheckOut/>}> </Route>
 </Routes>
 </BrowserRouter>
     </UserContextProvider>

@@ -29,6 +29,10 @@ const loginrouter =require("./routes/login.js")
 const logoutrouter= require("./routes/logout.js")
 const profileRouter = require('./routes/profile');
 
+const productRouter =require('./routes/product.js')
+const saveProductRouter=require('./routes/product.js')
+
+
 app.use(express.urlencoded({ extended: true }));
 //for json stringify
 app.use(express.json());
@@ -55,6 +59,8 @@ app.use(registerrouter);
 app.use(loginrouter);
 app.use(logoutrouter);
 app.use(profileRouter);
+app.use(productRouter)
+app.use(saveProductRouter)
 
 
   

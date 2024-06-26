@@ -13,7 +13,9 @@ import axios from 'axios';
 
 import CategoryPage from './Components/CategoryPage';
 
-
+import CheckOut from './Components/CheckOut';
+axios.defaults.baseURL = 'http://127.0.0.1:5000'
+axios.defaults.withCredentials = true;
 
 
 function App() {
@@ -36,7 +38,11 @@ function App() {
       <Route path="/kids" element={<Products/>}></Route>
       <Route path="*" element={<NotFound/>}></Route>
 
+      <Route path='/cart' element={<CheckOut/>}> </Route>
+
+
       <Route path="/:product" element={<Products/>}></Route>
+
 
 </Routes>
 </BrowserRouter>

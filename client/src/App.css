@@ -1,0 +1,35 @@
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Adding hover effect for track*/
+::-webkit-scrollbar-track:hover {
+    background: rgb(17 45 78);
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: rgb(17 45 78);
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+/* Adding hover effect for thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: #f1f1f1;
+    border-color: rgb(103, 103, 104);
+}
+
+/* For Firefox */
+scrollbar-width: thin;
+scrollbar-color: #8BBCF3 #f1f1f1;
+
+/* For entire document */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #8BBCF3 #f1f1f1;
+}
